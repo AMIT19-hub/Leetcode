@@ -10,7 +10,28 @@
  * }
  */
 public class Solution {
+
+    // this is the faster than way 1
     public ListNode detectCycle(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+        do {
+            if (fast == null || fast.next == null)
+                return null;
+            slow = slow.next;
+            fast = fast.next.next;
+        } while (slow != fast);
+        ListNode temp = head;
+        while (temp != slow) {
+            temp = temp.next;
+            slow = slow.next;
+        }
+        return temp;
+
+    }
+
+// first way of soution
+    public ListNode way1(ListNode head) {
         // first check if cycle present or not
         if (isCycle(head)) {
 
@@ -22,7 +43,7 @@ public class Solution {
                 length--;
             }
             while (temp1 != temp2) {
-                
+
                 temp1 = temp1.next;
                 temp2 = temp2.next;
             }
