@@ -12,13 +12,20 @@ class Solution {
 
     // optimized way within single pass
     public ListNode middleNode(ListNode head) {
+        if(head==null || head.next==null){
+            return head;
+        }
+        // for making the pointer null that points to mid node
+        ListNode prev =null;
         ListNode slow = head;
         ListNode fast = head;
         while (fast != null && fast.next != null) {
+            prev=slow;
             slow = slow.next;
 
             fast = fast.next.next;
         }
+        prev.next=null;
         return slow;
     }
 
