@@ -31,7 +31,7 @@ class Solution {
             hs.next = hf;
             hs = temp;
         }
-        // setting tail to null
+        // setting tail next to null
         if (hf != null) {
             hf.next = null;
         }
