@@ -15,6 +15,7 @@ class Solution {
             } else {
                 arr[k] = nums[i] * nums[i];
                 k -= 1;
+                // when i and j are not on same indices
                 if (k >= 0 && i != j) {
                     arr[k] = nums[j] * nums[j];
                 }
@@ -24,7 +25,7 @@ class Solution {
             }
             k -= 1;
         }
-        
+
         return arr;
     }
 }
