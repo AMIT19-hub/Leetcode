@@ -24,7 +24,7 @@ class Solution {
 
         Queue<TreeNode> queue = new ArrayDeque<>();
         queue.offer(root);
-        int num = 1;
+        boolean reverse=false;
         while (!queue.isEmpty()) {
 
             int len = queue.size();
@@ -32,7 +32,7 @@ class Solution {
             Stack<Integer> stack = new Stack<>();
             for (int i = 0; i < len; i++) {
                 TreeNode currNode = queue.poll();
-                if (num % 2 == 0) {
+                if (reverse) {
                     stack.push(currNode.val);
                 } else {
                     innerList.add(currNode.val);
@@ -48,7 +48,7 @@ class Solution {
             while (!stack.isEmpty()) {
                 innerList.add(stack.pop());
             }
-            num += 1;
+            reverse=!reverse;
 
             list.add(innerList);
 
