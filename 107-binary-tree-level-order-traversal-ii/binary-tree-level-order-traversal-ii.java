@@ -35,9 +35,9 @@ class Solution {
                     queue.offer(currNode.right);
                 }
             }
-            list.add(innerList);
+            list.add(0,innerList);
         }
-        Collections.reverse(list);
+       // Collections.reverse(list);
         return list;
     }
 }
