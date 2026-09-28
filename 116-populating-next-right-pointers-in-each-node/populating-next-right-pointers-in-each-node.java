@@ -42,12 +42,14 @@ class Solution {
                 }
                 if (!queue.isEmpty()) {
                     currNode.next = queue.peek();
+                } else {
+
                 }
-                if(i+1==len){
+                if (i + 1 == len) {
                     currNode.next = null;
                 }
             }
-            
+
         }
         return root;
     }
