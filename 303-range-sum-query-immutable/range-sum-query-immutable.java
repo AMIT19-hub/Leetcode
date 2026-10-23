@@ -6,9 +6,9 @@ class NumArray {
     }
 
     public int sumRange(int left, int right) {
-        if (nums.length < 2) {
-            return nums[0];
-        }
+        // if (nums.length < 2) {
+        //     return nums[0];
+        // }
         int sum = 0;
 
         while (left <= right) {
